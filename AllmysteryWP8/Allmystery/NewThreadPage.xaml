@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AllmysteryWP8.NewThreadPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44.119"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,0.119">
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Status}" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="7,0" Height="605" VerticalAlignment="Bottom" Grid.Row="2">
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="172*"/>
+        		<ColumnDefinition Width="40*"/>
+        		<ColumnDefinition Width="21*"/>
+        	</Grid.ColumnDefinitions>
+        	<TextBox x:Name="tbonewpost" AcceptsReturn="True" TextWrapping="Wrap" Height="595" HorizontalAlignment="Left" InputScope="Chat" Width="466" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Grid.ColumnSpan="3" />
+        	<TextBox x:Name="tbotitle" Text="{StaticResource lngTitle}" HorizontalAlignment="Left" Height="69" Margin="0,-44,0,580" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="466" Grid.ColumnSpan="3"/>
+
+        </Grid>
+    </Grid>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF5A5C75" ForegroundColor="White">
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.check.rest.png" Text="{StaticResource lngCreatePost}" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.questionmark.rest.png" Text="{StaticResource lngPreview}" Click="ApplicationBarIconButton_Click_1" />
+            
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
